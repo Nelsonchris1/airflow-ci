@@ -11,16 +11,16 @@ pytest:
 	docker exec webserver pytest /opt/airflow/test
 
 formatter:
-	docker exec webserver black dags/forex_data_pipeline.py
+	docker exec webserver black /opt/airflow/dags/forex_data_pipeline.py
 
 isort:
-	docker exec webserver isort dags/forex_data_pipeline.py
+	docker exec webserver isort /opt/airflow/dags/forex_data_pipeline.py
 
 lint:
-	docker exec webserver flake8 dags/forex_data_pipeline.py
+	docker exec webserver flake8 /opt/airflow/dags/forex_data_pipeline.py
 
 type:
-	docker exec webserver mypy dags/forex_data_pipeline.py
+	docker exec webserver mypy /opt/airflow/dags/forex_data_pipeline.py
 
 check: formatter isort lint type
 
