@@ -5,7 +5,7 @@ down:
 	docker compose down
 
 install:
-	docker exec webserver sh -c "pip install pytest black flake8 mypy isort airflow"
+	docker exec webserver sh -c "pip install pytest black flake8 mypy isort apache-airflow"
 
 pytest:
 	docker exec webserver pytest /opt/airflow/test
