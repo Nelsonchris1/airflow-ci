@@ -1,0 +1,21 @@
+name: airflow-dag-test
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-test:
+    runs-on: ubtunu-latest
+    steps:
+      - name: checkout repo
+      - uses: actions/checkout@v2
+
+      - name: start container
+        run: make up
+      - name: install libraires
+        run: make install
+      - name: run lint_type_check
+        run: make check
+      - name: run pytest
+        run: make pytest
