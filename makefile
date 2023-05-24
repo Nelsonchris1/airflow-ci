@@ -3,7 +3,7 @@ dir:
 up_doc:
 	docker compose up airflow-init && docker compose up  --build -d
 
-up: up_doc
+up: dir up_doc
 
 down:
 	docker compose down
