@@ -1,5 +1,5 @@
 up:
-	docker compose up docker compose up --build -d
+	docker compose up airflow-init && docker compose up  --build -d
 
 down:
 	docker compose down
