@@ -1,9 +1,9 @@
 dir: 
-	sudo mkdir -p ./dags ./logs ./plugins ./test && sudo chmod -R u=rwx,g=rwx,o=rwx logs plugins dags test
+	sudo mkdir -p ./dags ./logs ./plugins ./test ./config && sudo chmod -R u=rwx,g=rwx,o=rwx logs plugins dags test config
 up_doc:
 	docker compose up airflow-init && docker compose up  --build -d
 
-up: dir up_doc
+up: up_doc
 
 down:
 	docker compose down
